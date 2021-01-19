@@ -1,0 +1,1 @@
+# stylelint-config-mdn-group-order
