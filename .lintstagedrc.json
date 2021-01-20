@@ -1,0 +1,4 @@
+{
+	"*.css": "npm run stylelint",
+	"*.js": "eslint --fix ."
+}

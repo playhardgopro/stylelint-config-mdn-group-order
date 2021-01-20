@@ -1,0 +1,8 @@
+.className {
+	composes: test from 'test';
+
+	font-size: 14;
+
+	height: 50px;
+	width: 100%;
+}
