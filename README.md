@@ -35,7 +35,7 @@ npm install --save-dev stylelint stylelint-config-mdn-group-order
 
 Please, create a [PR][] and describe what you want to add and why :)
 
-[npm-url]: https://www.npmjs.com/package/
+[npm-url]: https://www.npmjs.com/package/stylelint-config-mdn-group-order
 
 [npm-img]: https://img.shields.io/npm/v/stylelint-config-mdn-group-order
 
