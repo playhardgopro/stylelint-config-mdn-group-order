@@ -4,7 +4,7 @@ module.exports = {
 	plugins: ['stylelint-order'],
 	rules: {
 		'order/properties-order': [
-			...getOrder(false)
+			...getOrder(true)
 		]
 	}
 }

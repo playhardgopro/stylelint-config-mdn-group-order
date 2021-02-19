@@ -4,7 +4,7 @@
 	"description": "A Stylelint config that sorts CSS properties based on MDN-data.",
 	"main": "index.js",
 	"scripts": {
-		"build": "npx tsc",
+		"build": "rm -rf ./dist && npx tsc",
 		"eslint": "npx eslint . --ext .js,.ts",
 		"stylelint": "stylelint '__tests__/*.css'",
 		"stylelint:fix": "stylelint '__tests__/*.css' --fix"
