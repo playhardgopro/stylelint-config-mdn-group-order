@@ -2,10 +2,10 @@
 	"name": "stylelint-config-mdn-group-order",
 	"version": "0.0.2",
 	"description": "A Stylelint config that sorts CSS properties based on MDN-data.",
-	"main": "./dist/index.js",
+	"main": "index.js",
 	"scripts": {
 		"build": "npx tsc",
-		"eslint": "eslint --ext .js .",
+		"eslint": "npx eslint . --ext .js,.ts",
 		"stylelint": "stylelint '__tests__/*.css'",
 		"stylelint:fix": "stylelint '__tests__/*.css' --fix"
 	},
@@ -16,14 +16,12 @@
 	"keywords": [
 		"stylelint",
 		"stylelint-config",
-		"stylelint-order"
+		"stylelint-order",
+		"mdn-data"
 	],
 	"gitHooks": {
 		"pre-commit": "lint-staged"
 	},
-	"files": [
-		"dist"
-	],
 	"author": "Daniil Egortsev",
 	"license": "MIT",
 	"bugs": {
@@ -31,8 +29,9 @@
 	},
 	"homepage": "https://github.com/playhardgopro/stylelint-config-mdn-group-order#readme",
 	"devDependencies": {
-		"@types/node": "^14.14.28",
-		"eslint": "^7.18.0",
+		"@typescript-eslint/eslint-plugin": "^4.15.1",
+		"@typescript-eslint/parser": "^4.15.1",
+		"eslint": "^7.20.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-node": "^11.1.0",
