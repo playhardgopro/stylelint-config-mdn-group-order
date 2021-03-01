@@ -8,9 +8,11 @@
 
 - [MDN data grouping](#mdn-data-grouping)
 	- [Usage](#usage)
+	- [Default order](#default-order)
+	- [Customization](#customization)
 	- [Contributing](#contributing)
 
-A [Stylelint][] config that sorts CSS properties based on [MDN-data][]. Also adds a `composes` property to the top of the list.
+A [Stylelint][] config that sorts CSS properties based on [MDN-data][].
 
 ## Usage
 
@@ -26,11 +28,101 @@ npm install --save-dev stylelint stylelint-config-mdn-group-order
 {
   "extends": "stylelint-config-mdn-group-order",
   "rules": {
-    // You can override rules here
+	// You can override rules here
   }
 }
 ```
 
+## Default order
+```js
+[
+	'Composes',
+	'Compositing and Blending',
+	'CSS Animations',
+	'CSS Backgrounds and Borders',
+	'CSS Basic User Interface',
+	'CSS Box Alignment',
+	'CSS Box Model',
+	'CSS Color',
+	'CSS Columns',
+	'CSS Containment',
+	'CSS Counter Styles',
+	'CSS Display',
+	'CSS Flexible Box Layout',
+	'CSS Fonts',
+	'CSS Fragmentation',
+	'CSS Generated Content',
+	'CSS Grid Layout',
+	'CSS Images',
+	'CSS Inline',
+	'CSS Lists and Counters',
+	'CSS Logical Properties',
+	'CSS Masking',
+	'CSS Miscellaneous',
+	'CSS Motion Path',
+	'CSS Overflow',
+	'CSS Pages',
+	'CSS Positioning',
+	'CSS Ruby',	
+	'CSS Scroll Anchoring',
+	'CSS Scroll Snap',
+	'CSS Scrollbars',
+	'CSS Shapes',
+	'CSS Speech',
+	'CSS Table',
+	'CSS Text Decoration',
+	'CSS Text',
+	'CSS Transforms',
+	'CSS Transitions',
+	'CSS Variables',
+	'CSS Will Change',
+	'CSS Writing Modes',
+	'CSSOM View',
+	'Filter Effects',
+	'MathML',
+	'Microsoft Extensions',
+	'Mozilla Extensions',
+	'Pointer Events',
+	'WebKit Extensions'
+]
+```
+
+## Customization
+
+If you want to customize order of groups, you can use function
+```ts
+getOrder(forCSSModules: boolean, sortOrder?: string[])
+```
+
+1. First of all install [stylelint-order][] plugin
+```bash
+npm install stylelint-order --save-dev
+```
+2. Import `getOrder()` from package
+```js
+const { getOrder } = require('stylelint-config-mdn-group-order/dist/mdn-groups')
+```
+3. Now you can use this function. 
+   For example:
+
+```js
+"rules": {
+	'order/properties-order': [
+		getOrder(true, [
+			'CSS Display',
+			'CSS Columns',
+			'CSS Containment',
+			'CSS Color',
+			'CSS Counter Styles',
+			'CSS Flexible Box Layout'
+			]),
+		{
+			'unspecified': 'bottom',
+			'emptyLineBeforeUnspecified': 'always',
+		},
+	]
+}
+```
 ## Contributing
 
 Please, create a [PR][] and describe what you want to add and why :)
@@ -50,6 +142,8 @@ Please, create a [PR][] and describe what you want to add and why :)
 [npm-license]: https://img.shields.io/npm/l/stylelint-config-mdn-group-order
 
 [stylelint]: https://github.com/stylelint/stylelint
+
+[stylelint-order]: https://github.com/hudochenkov/stylelint-order
 
 [mdn-data]: https://github.com/mdn/data
 

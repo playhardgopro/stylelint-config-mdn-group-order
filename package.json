@@ -4,7 +4,8 @@
 	"description": "A Stylelint config that sorts CSS properties based on MDN-data.",
 	"main": "index.js",
 	"scripts": {
-		"eslint": "eslint --ext .js .",
+		"build": "rm -rf ./dist && npx tsc",
+		"eslint": "npx eslint . --ext .js,.ts",
 		"stylelint": "stylelint '__tests__/*.css'",
 		"stylelint:fix": "stylelint '__tests__/*.css' --fix"
 	},
@@ -15,7 +16,8 @@
 	"keywords": [
 		"stylelint",
 		"stylelint-config",
-		"stylelint-order"
+		"stylelint-order",
+		"mdn-data"
 	],
 	"gitHooks": {
 		"pre-commit": "lint-staged"
@@ -27,12 +29,15 @@
 	},
 	"homepage": "https://github.com/playhardgopro/stylelint-config-mdn-group-order#readme",
 	"devDependencies": {
-		"eslint": "^7.18.0",
+		"@typescript-eslint/eslint-plugin": "^4.15.1",
+		"@typescript-eslint/parser": "^4.15.1",
+		"eslint": "^7.20.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-node": "^11.1.0",
 		"lint-staged": "^10.5.3",
 		"stylelint": "^13.9.0",
+		"typescript": "^4.1.5",
 		"yorkie": "^2.0.0"
 	},
 	"dependencies": {
