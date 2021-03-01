@@ -19,6 +19,9 @@
 		"stylelint-order",
 		"mdn-data"
 	],
+	"files": [
+		"dist"
+	],
 	"gitHooks": {
 		"pre-commit": "lint-staged"
 	},
