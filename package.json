@@ -1,6 +1,6 @@
 {
 	"name": "stylelint-config-mdn-group-order",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "A Stylelint config that sorts CSS properties based on MDN-data.",
 	"main": "index.js",
 	"scripts": {
